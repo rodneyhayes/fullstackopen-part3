@@ -1,2 +1,8 @@
+# Node modules
 node_modules
+
+# Environment file
 .evn
+
+# VS Code REST Client
+*.rest

@@ -44,11 +44,22 @@ app.get('/api/persons/:id', (req, res) => {
 
 app.delete('/api/persons/:id', (req, res) => {
     const id = Number(req.params.id);
-    
     persons = persons.filter(p => p.id !== id);
 
     res.status(204).end();
-})
+});
+
+app.post('/api/persons', (req, res) => {
+	var person = req.body;
+	person.id = getMaxId() + 1;
+	persons = persons.concat(person);
+
+	res.json(person);
+});
+
+const getMaxId = () => {
+	return persons.length > 0 ? Math.max(...persons.map(p => p.id)) : 0;
+}
 
 app.get('/info', (req, res) => {
     res.send(`<p>Phonebook has info for ${persons.length} ${persons.length === 1 ? 'person' : 'people'}</p><p>${new Date()}</p>`)
