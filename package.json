@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Repository for Part 3 of https://fullstackopen.com/ full stack course.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodneyhayes/fullstackopen-part3.git"
+  },
+  "author": "Rodney Hayes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rodneyhayes/fullstackopen-part3/issues"
+  },
+  "homepage": "https://github.com/rodneyhayes/fullstackopen-part3#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
