@@ -51,6 +51,18 @@ app.delete('/api/persons/:id', (req, res) => {
 
 app.post('/api/persons', (req, res) => {
 	var person = req.body;
+
+	if(!person.name || !person.number){
+		return res.status(400).json({
+			error: 'content missing'
+		});
+	}
+	else if(persons.find(p => p.name === person.name)){
+		return res.status(400).json({
+			error: 'name must be unique'
+		});
+	}
+	
 	person.id = getMaxId() + 1;
 	persons = persons.concat(person);
 
