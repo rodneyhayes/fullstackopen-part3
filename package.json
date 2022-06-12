@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": " "
+    "test": " ",
+    "build:ui": "del /Q build && cd ../fullstackopen/part2/phonebook && npm run build && mkdir ..\\..\\..\\fullstackopen-part3\\build && xcopy /E build ..\\..\\..\\fullstackopen-part3\\build",
+    "build:test": "del /Q build",
+    "deploy": "git push heroku main",
+    "logs:prod": "heroku logs --tail"
   },
   "repository": {
     "type": "git",
